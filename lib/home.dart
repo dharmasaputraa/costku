@@ -1,7 +1,8 @@
-import 'package:costku/pages/anggaran.dart';
-import 'package:costku/pages/beranda.dart';
-import 'package:costku/pages/transaksi.dart';
-import 'package:costku/pages/tujuan.dart';
+import 'package:costku/pages/anggaran/anggaran.dart';
+import 'package:costku/pages/beranda/beranda.dart';
+import 'package:costku/pages/transaksi/tambah_transaksi.dart';
+import 'package:costku/pages/transaksi/transaksi.dart';
+import 'package:costku/pages/tujuan/tujuan.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -13,7 +14,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int currenTab = 0;
-  final List<Widget> screens = [Beranda(), Transaksi(), Anggaran(), Tujuan()];
+  final List<Widget> screens = [Beranda(), Transaksi(), Anggaran(), Tujuan(), AddTransactionForm()];
 
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currenScreen = Beranda();
@@ -26,7 +27,12 @@ class _HomeState extends State<Home> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            currenScreen = AddTransactionForm();
+            currenTab = -1;
+          });
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(

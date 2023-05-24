@@ -1,3 +1,4 @@
+import 'package:costku/pages/dompet/dompet.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -38,10 +39,12 @@ class _TransaksiState extends State<Transaksi> {
                 icon: Icon(
                   Icons.account_balance_wallet_outlined,
                   color: Colors.white,
-                  size: 25,
+                  size: 22,
                 ),
                 onPressed: () {
-                  print('IconButton pressed ...');
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                    return Dompet();
+                  }));
                 },
               ),
             ),
@@ -347,6 +350,7 @@ class _TransaksiState extends State<Transaksi> {
                   border: Border.all(
                     color: Color(0xFFE2DFDF),
                   ),
+                  borderRadius: BorderRadius.circular(5),
                 ),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,

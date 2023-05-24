@@ -1,8 +1,9 @@
 import 'package:costku/home.dart';
+import 'package:costku/pages/auth/login_form.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(LoginPage());
+  runApp(const LoginPage());
 }
 
 class LoginPage extends StatelessWidget {
@@ -27,31 +28,31 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Container(
-        padding: EdgeInsets.all(16),
+        padding: const EdgeInsets.all(16),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
+            const Text(
               'Costku',
               style: TextStyle(
                 fontSize: 32,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Manajemen keuangan terbaik untukmu',
               style: TextStyle(
                 fontSize: 16,
               ),
             ),
-            SizedBox(height: 32),
+            const SizedBox(height: 32),
             Image.asset(
               'assets/6573.png',
               width: 300,
             ),
-            SizedBox(height: 50),
+            const SizedBox(height: 50),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 primary: Colors.blue,
@@ -60,17 +61,17 @@ class LoginScreen extends StatelessWidget {
               ),
               onPressed: () {
                 Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                  return Home();
+                  return const LoginForm();
                 }));
               },
-              child: Text('Masuk'),
+              child: const Text('Masuk'),
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Container(
               height: 1,
               color: Colors.grey[300],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             ElevatedButton.icon(
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
@@ -81,11 +82,11 @@ class LoginScreen extends StatelessWidget {
                 ),
               ),
               onPressed: () {},
-              icon: Icon(Icons.login_rounded),
-              label: Text('Masuk dengan Google'),
+              icon: const Icon(Icons.login_rounded),
+              label: const Text('Masuk dengan Google'),
             ),
-            SizedBox(height: 16),
-            Text(
+            const SizedBox(height: 16),
+            const Text(
               'Belum Punya Akun? Daftar',
               style: TextStyle(
                 fontSize: 16,
